@@ -1,0 +1,94 @@
+[{
+  "_id": "5a2f3ba5952d0a00018055d0",
+  "city": "TIJUANA",
+  "garita": "SAN_YSIDRO",
+  "content": {
+    "car": {
+      "normal": {
+        "time": "55",
+        "lanes": "8"
+      },
+      "sentry": {
+        "time": "15",
+        "lanes": "5"
+      },
+      "readyLine": {
+        "time": "50",
+        "lanes": "11"
+      }
+    },
+    "people": {
+      "normal": {
+        "time": "10",
+        "lanes": "5"
+      },
+      "readyLine": {
+        "time": "5",
+        "lanes": "3"
+      }
+    }
+  },
+  "created": "2017-12-12T02:15:01.550Z"
+}, {
+  "_id": "5a2f3ba6952d0a00018055d2",
+  "city": "TIJUANA",
+  "garita": "OTAY",
+  "content": {
+    "car": {
+      "normal": {
+        "time": "50",
+        "lanes": "2"
+      },
+      "sentry": {
+        "time": "10",
+        "lanes": "3"
+      },
+      "readyLine": {
+        "time": "50",
+        "lanes": "8"
+      }
+    },
+    "people": {
+      "normal": {
+        "time": "0",
+        "lanes": "3"
+      },
+      "readyLine": {
+        "time": "0",
+        "lanes": "3"
+      }
+    }
+  },
+  "created": "2017-12-12T02:15:02.208Z"
+}, {
+  "_id": "5a2f3ba5952d0a00018055d1",
+  "city": "TIJUANA",
+  "garita": "PEDWEST",
+  "content": {
+    "car": {
+      "normal": {
+        "time": "",
+        "lanes": ""
+      },
+      "sentry": {
+        "time": "",
+        "lanes": ""
+      },
+      "readyLine": {
+        "time": "",
+        "lanes": ""
+      }
+    },
+    "people": {
+      "normal": {
+        "time": "20",
+        "lanes": "2"
+      },
+      "readyLine": {
+        "time": "10",
+        "lanes": "3"
+      }
+    }
+  },
+  "created": "2017-12-12T02:15:01.909Z"
+}]
