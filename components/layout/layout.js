@@ -6,12 +6,11 @@ import MainHeader from './main-header';
 import MainMenu from './main-menu';
 import MainFooter from './main-footer';
 
+
 const Layout = (props) => (
   <div>
     <Head>
       <title>gcenter</title>
-      <link rel="icon" href="/static/images/favicon.ico" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
 
     <MainHeader city="Tijuana / San Diego" />
@@ -34,7 +33,7 @@ const Layout = (props) => (
     `}
     </style>
   </div>
-);
+)
 
 Layout.propTypes = {
   url: PropTypes.string.isRequired,
