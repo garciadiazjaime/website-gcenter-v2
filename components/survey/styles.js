@@ -7,6 +7,7 @@ export default css`
 
   .cta button{
     background-color: #1b8ece;
+    border: none;
     display: inline-block;
     color: white;
     padding: 13px;
