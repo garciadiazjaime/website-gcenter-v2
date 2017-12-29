@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Head from 'next/head'
 import { bindActionCreators } from 'redux'
 import withRedux from 'next-redux-wrapper'
 
@@ -17,6 +18,10 @@ class SurveyPage extends Component {
     const { url } = this.props
     return (
       <Layout url={url.pathname}>
+        <Head>
+          <title>GaritaCenter - Encuesta. Reporta el tiempo en espera que llevas en garita.</title>
+          <meta name="description" content="¿Cómo te va en la línea? Da tu reporte de garitas aquí y ayuda a los demás" />
+        </Head>
         <Survey />
       </Layout>
     )

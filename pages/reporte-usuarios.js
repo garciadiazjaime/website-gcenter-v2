@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Head from 'next/head'
 import Link from 'next/link'
 import 'isomorphic-unfetch'
 
@@ -38,6 +39,10 @@ class UserReportPage extends Component {
     const { url } = this.props
     return (
       <Layout url={url.pathname}>
+        <Head>
+          <title>GaritaCenter - Reporte de Usuarios para San Ysidro y Otay | Tijuana</title>
+          <meta name="description" content="Información reportada por la comunidad de GaritaCenter." />
+        </Head>
         <div className="user-reports">
           <Link href="/encuesta">
             <a className="cta">
