@@ -2,7 +2,7 @@ import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import flush from 'styled-jsx/server'
 
-import { apiUrl } from '../services/report'
+import { proxyUrl } from '../services/report'
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
@@ -18,7 +18,7 @@ export default class MyDocument extends Document {
           <link rel="icon" href="/static/images/favicon.ico" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <script
-            dangerouslySetInnerHTML={{ __html: `window.apiUrl = "${apiUrl}"` }} // eslint-disable-line
+            dangerouslySetInnerHTML={{ __html: `window.proxyUrl = "${proxyUrl}"` }} // eslint-disable-line
           />
         </Head>
         <body>

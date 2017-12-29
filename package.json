@@ -5,6 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.16.2",
     "isomorphic-unfetch": "^2.0.0",
     "next": "^4.2.0",
     "next-redux-wrapper": "^1.3.5",
@@ -15,18 +16,23 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "dev": "API_URL=http://0.0.0.0:3030 HOST=0.0.0.0 next",
+    "dev": "cross-env NODE_ENV=development API_URL=http://0.0.0.0:3030/ PROXY_URL=http://0.0.0.0:3000/api/ HOST=0.0.0.0 PORT=3000 node server.js",
     "build": "next build",
-    "start": "next start",
+    "start": "cross-env node server.js",
     "lint": "eslint --ext .js,.js .",
     "test": "yarn lint && yarn jest",
     "docker:build": "next build && docker build -t garciadiazjaime/website-gcenter-v2 .",
-    "docker:run": "docker run -d -p 49189:3000 -e 'API_URL=http://192.168.1.78:3030/' --name gcenter garciadiazjaime/website-gcenter-v2",
+    "docker:run": "docker run -d -p 49189:3000 -e 'PROXY_URL=http://192.168.1.78:3030/' --name gcenter garciadiazjaime/website-gcenter-v2",
     "docker:push": "docker push garciadiazjaime/website-gcenter-v2",
-    "docker:pull": "docker pull garciadiazjaime/website-gcenter-v2"
+    "docker:pull": "docker pull garciadiazjaime/website-gcenter-v2",
+    "analyze": "cross-env ANALYZE=1 next build"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.3",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "cross-env": "^5.1.3",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "eslint": "^4.13.1",
@@ -35,12 +41,14 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.5.1",
+    "http-proxy-middleware": "^0.17.4",
     "jest": "^21.2.1",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.2.0",
     "redux-devtools-extension": "^2.13.2",
     "styled-jsx-plugin-stylus": "^0.0.3",
-    "stylus": "^0.54.5"
+    "stylus": "^0.54.5",
+    "webpack-bundle-analyzer": "^2.9.1"
   },
   "jest": {
     "setupFiles": [
