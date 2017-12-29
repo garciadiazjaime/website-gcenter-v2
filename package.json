@@ -5,6 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "compression": "^1.7.1",
     "express": "^4.16.2",
     "isomorphic-unfetch": "^2.0.0",
     "next": "^4.2.0",
@@ -19,6 +20,7 @@
     "dev": "cross-env NODE_ENV=development API_URL=http://0.0.0.0:3030/ PROXY_URL=http://0.0.0.0:3000/api/ HOST=0.0.0.0 PORT=3000 node server.js",
     "build": "next build",
     "start": "cross-env node server.js",
+    "prod": "NODE_ENV=production API_URL=http://api.garitacenter.com/ PROXY_URL=http://localhost:3000/api/ npm start",
     "lint": "eslint --ext .js,.js .",
     "test": "yarn lint && yarn jest",
     "docker:build": "next build && docker build -t garciadiazjaime/website-gcenter-v2 .",

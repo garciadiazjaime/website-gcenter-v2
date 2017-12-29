@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import express from 'express'
 import next from 'next'
+import compression from 'compression'
 
 const devProxy = {
   '/api': {
@@ -26,6 +27,7 @@ app
   .then(() => {
     server = express()
 
+    server.use(compression())
     // Set up the proxy.
     // if (dev && devProxy ) {
     const proxyMiddleware = require('http-proxy-middleware')
