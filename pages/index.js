@@ -1,24 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
 import 'isomorphic-unfetch'
 
 import Layout from '../components/layout/layout'
 import OficialReport from '../components/oficial-report'
 import { getReport } from '../services/report'
 
-class HomePage extends Component {
+const HomePage = ({ url, report }) => (
+  <Layout url={url.pathname}>
+    <OficialReport report={report} />
+  </Layout>
+)
 
-  static async getInitialProps() {
-    const report = await getReport('tijuana')
-    return { report }
-  }
-
-  render() {
-    return (
-      <Layout url={this.props.url.pathname}>
-        <OficialReport report={this.props.report} />
-      </Layout>
-    )
-  }
+HomePage.getInitialProps = async () => {
+  const report = await getReport('tijuana')
+  return { report }
 }
 
 export default HomePage

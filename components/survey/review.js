@@ -25,6 +25,6 @@ const Review = ({ clickHandler, answers }) => {
   )
 }
 
-const mapStateToProps = ({ step, answers }) => ({ step, answers })
+const mapStateToProps = ({ answers }) => ({ answers })
 
 export default connect(mapStateToProps)(Review)
