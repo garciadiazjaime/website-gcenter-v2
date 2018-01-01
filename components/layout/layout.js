@@ -1,20 +1,17 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Head from 'next/head'
+import ReactGA from 'react-ga'
 
-import MainHeader from './main-header';
-import MainMenu from './main-menu';
-import MainFooter from './main-footer';
+import MainHeader from './main-header'
+import MainMenu from './main-menu'
+import MainFooter from './main-footer'
 
 class Layout extends Component {
 
   componentDidMount() {
-    window.dataLayer = window.dataLayer || []
-    const gtag = () => {
-      window.dataLayer.push(arguments)
-    }
-    gtag('js', new Date())
-    gtag('config', 'UA-26633604-1')
+    ReactGA.initialize('UA-26633604-1');
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }
 
   render() {

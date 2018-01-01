@@ -19,7 +19,6 @@ export default class MyDocument extends Document {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
           <meta name="keywords" content="reporte garitas, garitas, garitas tijuana, garitacenter, garita san ysidro, garita otay, linea san ysidro" />
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26633604-1" />
           <script
             dangerouslySetInnerHTML={{ __html: `window.proxyUrl = "${proxyUrl}"` }} // eslint-disable-line
           />
