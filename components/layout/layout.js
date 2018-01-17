@@ -12,6 +12,7 @@ class Layout extends Component {
   componentDidMount() {
     ReactGA.initialize('UA-26633604-1');
     ReactGA.pageview(window.location.pathname + window.location.search);
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
   }
 
   render() {
@@ -26,6 +27,15 @@ class Layout extends Component {
         <MainMenu url={this.props.url} />
 
         {this.props.children}
+
+        <br />
+        <ins
+          className="adsbygoogle"
+          style={{ display: 'block' }}
+          data-ad-client="ca-pub-2643588035417760"
+          data-ad-slot="8651758334"
+          data-ad-format="auto"
+        />
 
         <MainFooter />
 

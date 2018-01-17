@@ -7,6 +7,7 @@ module.exports = {
     return {
       '/': { page: '/' },
       '/reporte-usuarios': { page: '/reporte-usuarios' },
+      '/encuesta': { page: '/encuesta'}
     }
   },
   webpack: (config, { dev }) => {

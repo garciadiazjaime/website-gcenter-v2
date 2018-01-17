@@ -18,12 +18,14 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development API_URL=http://0.0.0.0:3030/ PROXY_URL=http://0.0.0.0:3000/api/ HOST=0.0.0.0 PORT=3000 node server.js",
+    "dev": "API_URL=http://0.0.0.0:3030 HOST=0.0.0.0 next dev",
+    "dev2": "cross-env NODE_ENV=development API_URL=http://0.0.0.0:3030/ PROXY_URL=http://0.0.0.0:3000/api/ HOST=0.0.0.0 PORT=3000 node server.js",
     "build": "next build",
     "start": "cross-env node server.js",
     "prod": "NODE_ENV=production API_URL=http://api.garitacenter.com/ PROXY_URL=http://localhost:3000/api/ npm start",
     "lint": "eslint --ext .js,.js .",
     "test": "yarn lint && yarn jest",
+    "export": "yarn build && next export",
     "docker:build": "next build && docker build -t garciadiazjaime/website-gcenter-v2 .",
     "docker:run": "docker run -d -p 49189:3000 -e 'PROXY_URL=http://192.168.1.78:3030/' --name gcenter garciadiazjaime/website-gcenter-v2",
     "docker:push": "docker push garciadiazjaime/website-gcenter-v2",
