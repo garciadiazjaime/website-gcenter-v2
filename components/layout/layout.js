@@ -6,17 +6,10 @@ import MainHeader from './main-header'
 import MainMenu from './main-menu'
 import MainFooter from './main-footer'
 
-const gtag = () => {
-  window.dataLayer.push(arguments)
-}
-
 class Layout extends Component {
 
   componentDidMount() {
     (window.adsbygoogle = window.adsbygoogle || []).push({})
-    window.dataLayer = window.dataLayer || []
-    gtag('js', new Date())
-    gtag('config', 'UA-26633604-1')
   }
 
   render() {
