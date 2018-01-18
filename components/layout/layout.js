@@ -1,18 +1,22 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
-import ReactGA from 'react-ga'
 
 import MainHeader from './main-header'
 import MainMenu from './main-menu'
 import MainFooter from './main-footer'
 
+const gtag = () => {
+  window.dataLayer.push(arguments)
+}
+
 class Layout extends Component {
 
   componentDidMount() {
-    ReactGA.initialize('UA-26633604-1');
-    ReactGA.pageview(window.location.pathname + window.location.search);
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
+    (window.adsbygoogle = window.adsbygoogle || []).push({})
+    window.dataLayer = window.dataLayer || []
+    gtag('js', new Date())
+    gtag('config', 'UA-26633604-1')
   }
 
   render() {

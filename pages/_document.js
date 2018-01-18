@@ -15,7 +15,7 @@ export default class MyDocument extends Document {
     return (
       <html lang="es">
         <Head>
-          <link rel="icon" href="/images/favicon.ico" />
+          <link rel="icon" href="/static/images/favicon.ico" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
           <meta name="keywords" content="reporte garitas, garitas, garitas tijuana, garitacenter, garita san ysidro, garita otay, linea san ysidro" />
@@ -26,6 +26,7 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26633604-1" />
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />
         </body>
       </html>
