@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Report = ({ report }) => {
-  return (
+  return report.length ? (
     <section>
       <div className="row">
         <div />
@@ -98,7 +98,7 @@ const Report = ({ report }) => {
       `}
       </style>
     </section>
-  );
+  ) : null;
 }
 
 Report.propTypes = {

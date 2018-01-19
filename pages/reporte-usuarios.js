@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import 'isomorphic-unfetch'
@@ -27,51 +27,61 @@ const renderReport = (report) => {
   ))
 }
 
-const UserReportPage = ({ url, report }) => (
-  <Layout url={url.pathname}>
-    <Head>
-      <title>GaritaCenter - Reporte de Usuarios para San Ysidro y Otay | Tijuana</title>
-      <meta name="description" content="Información reportada por la comunidad de GaritaCenter." />
-    </Head>
-    <div className="user-reports">
-      <Link href="/encuesta">
-        <a className="cta">
-          <span>¿Cuánto llevas en la línea?</span>
-          <span>Repórtalo aquí</span>
-        </a>
-      </Link>
-      <div className="entries">
-        {renderReport(report)}
-      </div>
-    </div>
-    <style jsx>{`
-      .user-reports {
-        padding: 15px 5px;
-        background-color: white;
-        text-align: center;
-      }
-      .cta {
-        background-color: #1b8ece;
-        display: inline-block;
-        color: white;
-        padding: 15px;
-        border-radius: 5px;
-      }
-      .cta span {
-        display: block;
-      }
-      .entries {
-        margin-top: 15px;
-        text-align: left;
-      }
-    `}
-    </style>
-  </Layout>
-)
+class UserReportPage extends Component {
+  state = {
+    report: []
+  }
 
-UserReportPage.getInitialProps = async () => {
-  const report = await getUserReport('tijuana')
-  return { report }
+  async componentDidMount() {
+    const report = await getUserReport('tijuana')
+    this.setState({ report }) // eslint-disable-line
+  }
+
+  render() {
+    const { url } = this.props
+    const { report } = this.state
+    return (
+      <Layout url={url.pathname}>
+        <Head>
+          <title>GaritaCenter - Reporte de Usuarios para San Ysidro y Otay | Tijuana</title>
+          <meta name="description" content="Información reportada por la comunidad de GaritaCenter." />
+        </Head>
+        <div className="user-reports">
+          <Link href="/encuesta">
+            <a className="cta">
+              <span>¿Cuánto llevas en la línea?</span>
+              <span>Repórtalo aquí</span>
+            </a>
+          </Link>
+          <div className="entries">
+            {renderReport(report)}
+          </div>
+        </div>
+        <style jsx>{`
+          .user-reports {
+            padding: 15px 5px;
+            background-color: white;
+            text-align: center;
+          }
+          .cta {
+            background-color: #1b8ece;
+            display: inline-block;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+          }
+          .cta span {
+            display: block;
+          }
+          .entries {
+            margin-top: 15px;
+            text-align: left;
+          }
+        `}
+        </style>
+      </Layout>
+    )
+  }
 }
 
 export default UserReportPage
