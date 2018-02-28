@@ -20,3 +20,12 @@ docker run -d -p 49189:3000 -e 'PROXY_URL=http://api.garitacenter.com/' --name g
 docker push garciadiazjaime/website-gcenter-v2
 
 NODE_ENV=production API_URL=http://api.garitacenter.com/ PROXY_URL=http://localhost:3000/api/ npm start
+
+
+## Deploy commands
+```
+gsutil rm -r gs://www.playami.com/_next
+gsutil mb gs://www.garitacenter.com/
+gsutil -m cp -r ./ gs://www.garitacenter.com
+gsutil iam ch allUsers:objectViewer gs://www.garitacenter.com/
+```

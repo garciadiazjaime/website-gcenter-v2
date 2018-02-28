@@ -24,7 +24,7 @@
     "prod": "NODE_ENV=production API_URL=http://api.garitacenter.com/ PROXY_URL=http://localhost:3000/api/ npm start",
     "lint": "eslint --ext .js,.js .",
     "test": "yarn lint && yarn jest",
-    "export": "yarn build && next export",
+    "export": "yarn build && API_URL=//api.garitacenter.com next export",
     "docker:build": "next build && docker build -t garciadiazjaime/website-gcenter-v2 .",
     "docker:run": "docker run -d -p 49189:3000 -e 'PROXY_URL=http://192.168.1.78:3030/' --name gcenter garciadiazjaime/website-gcenter-v2",
     "docker:push": "docker push garciadiazjaime/website-gcenter-v2",
