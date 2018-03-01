@@ -27,9 +27,7 @@ const Report = ({ report }) => {
         <div><span className="type-a">{report[0].content.car.sentry.time}</span></div>
         <div><span>{report[1].content.car.sentry.time}</span></div>
       </div>
-
-      <br />
-
+      <div className="line-break" />
       <h5>Personas</h5>
       <div className="row">
         <div><h4>Normal</h4></div>
@@ -46,11 +44,11 @@ const Report = ({ report }) => {
         <div><span className="type-a">{report[0].content.people.normal.time}</span></div>
         <div />
       </div>
-      <p>Reporte de Garitas actualizado hace </p>
       <style jsx>{`
         section {
           background-color: white;
-          padding: 15px 5px;
+          padding: 10px 5px;
+          margin-bottom: 12px;
         }
 
         .row {
@@ -94,6 +92,10 @@ const Report = ({ report }) => {
         p {
           font-size: .6em;
           opacity: 0.6;
+        }
+
+        .line-break {
+          height: 10px;
         }
       `}
       </style>

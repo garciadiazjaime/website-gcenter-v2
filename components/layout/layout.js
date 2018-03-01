@@ -25,7 +25,6 @@ class Layout extends Component {
 
         {this.props.children}
 
-        <br />
         <ins
           className="adsbygoogle"
           style={{ display: 'block' }}

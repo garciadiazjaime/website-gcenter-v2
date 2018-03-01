@@ -22,7 +22,7 @@ const MainMenu = ({ url }) => (
     <style jsx>{`
       nav {
         padding-left: 30px;
-        margin-top: 10px;
+        margin-top: 4px;
       }
 
       a {
@@ -31,7 +31,7 @@ const MainMenu = ({ url }) => (
         display: inline-block;
         height: 30px;
         margin: 0 3px;
-        padding: 5px 10px;
+        padding: 2px 10px;
         text-decoration: none;
         line-height: 30px;
         border-radius: 3px 3px 0 0;
