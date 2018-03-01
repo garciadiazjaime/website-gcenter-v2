@@ -47,12 +47,13 @@ const Report = ({ report }) => {
       <style jsx>{`
         section {
           background-color: white;
-          padding: 10px 5px;
+          padding: 6px 5px;
           margin-bottom: 12px;
         }
 
         .row {
           display: flex;
+          align-items: center;
         }
 
         .row div {
@@ -70,7 +71,6 @@ const Report = ({ report }) => {
           margin: 0;
           opacity: 0.6;
           font-weight: normal;
-          line-height: 2.5em;
         }
 
         h5 {
@@ -95,7 +95,7 @@ const Report = ({ report }) => {
         }
 
         .line-break {
-          height: 10px;
+          height: 6px;
         }
       `}
       </style>

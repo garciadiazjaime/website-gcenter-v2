@@ -17,7 +17,7 @@ const MainHeader = ({ city }) => (
       header {
         display: flex;
         align-items: center;
-        padding: 3px 5px;
+        padding: 3px 5px 0;
       }
 
       a {
@@ -36,6 +36,7 @@ const MainHeader = ({ city }) => (
         color: white;
         margin: 0;
         font-weight: normal;
+        font-size: 1.3em;
       }
     `}
     </style>
