@@ -33,3 +33,8 @@ export async function saveUserLocation(data) {
   })
   return await response.json()
 }
+
+export async function getUserLocation() {
+  const response = await fetch(`${apiUrl}/user/location`)
+  return await response.json()
+}

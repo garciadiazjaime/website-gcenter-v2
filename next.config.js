@@ -7,7 +7,8 @@ module.exports = {
     return {
       '/': { page: '/' },
       '/reporte-usuarios': { page: '/reporte-usuarios' },
-      '/encuesta': { page: '/encuesta'}
+      '/encuesta': { page: '/encuesta'},
+      '/reporte-cruce-fronterizo': { page: '/reporte-cruce-fronterizo'}
     }
   },
   webpack: (config, { dev }) => {
