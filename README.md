@@ -24,8 +24,8 @@ NODE_ENV=production API_URL=http://api.garitacenter.com/ PROXY_URL=http://localh
 
 ## Deploy commands
 ```
-gsutil rm -r gs://www.playami.com/_next
+gsutil -m rm -r gs://www.garitacenter.com/_next
 gsutil mb gs://www.garitacenter.com/
-gsutil -m cp -r ./ gs://www.garitacenter.com
+gsutil -m cp -r ./out/. gs://www.garitacenter.com
 gsutil iam ch allUsers:objectViewer gs://www.garitacenter.com/
 ```
