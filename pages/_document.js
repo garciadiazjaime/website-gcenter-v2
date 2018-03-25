@@ -1,6 +1,7 @@
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import flush from 'styled-jsx/server'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 import { apiUrl } from '../services/report'
 

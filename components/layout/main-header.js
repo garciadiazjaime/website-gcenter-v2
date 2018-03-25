@@ -1,46 +1,28 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 import Link from 'next/link'
+import AppBar from 'material-ui/AppBar'
+
+const style = {
+  backgroundColor: '#343740',
+}
+
+const titleStyle = {
+  fontSize: '24px',
+  lineHeight: '20px',
+  margin: '12px 0 6px',
+  height: 'auto',
+  whiteSpace: 'initial'
+}
+
+const cityStyle = {
+  fontSize: '18px'
+}
+
+const titleEl = city => (<div>Reporte de Garitas <span style={cityStyle}>{city}</span></div>)
 
 const MainHeader = ({ city }) => (
-  <header>
-    <Link href="/">
-      <a>
-        <img src="/static/images/garita-center-logo.jpg" alt="GaritaCenter - Reporte de Garitas" />
-      </a>
-    </Link>
-    <div>
-      <h1>Reporte de Garitas</h1>
-      <h2>{city}</h2>
-    </div>
-    <style jsx>{`
-      header {
-        display: flex;
-        align-items: center;
-        padding: 3px 5px 0;
-      }
-
-      a {
-        margin-right: 5px;
-      }
-
-      h1 {
-        color: white;
-        opacity: 0.6;
-        margin: 0;
-        font-size: 1em;
-        font-weight: normal;
-      }
-
-      h2 {
-        color: white;
-        margin: 0;
-        font-weight: normal;
-        font-size: 1.3em;
-      }
-    `}
-    </style>
-  </header>
+  <AppBar title={titleEl(city)}  style={style} titleStyle={titleStyle} />
 );
 
 MainHeader.propTypes = {
