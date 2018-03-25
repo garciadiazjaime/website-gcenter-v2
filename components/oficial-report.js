@@ -1,110 +1,99 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
+
+import {
+  Table,
+  TableBody,
+  TableRow,
+  TableRowColumn,
+} from 'material-ui/Table'
+
+const titleStyle = {
+  fontSize: '18px',
+  padding: '0 0 0 12px'
+}
+
+const titleStyleSecondary = Object.assign({}, titleStyle, {
+  opacity: '0.7'
+})
+
+const typeWrapperStyle = {
+  height: 'auto',
+}
+
+const typeStyle = {
+  fontSize: '16px',
+  fontWeight: 'bold',
+  height: '28px'
+}
+
+const valueStyle = {
+  fontSize: '30px'
+}
+
+const valueStylePrimary = Object.assign({}, valueStyle, {
+  color: '#1B8ECE'
+})
+
+const timeStyle = {
+  fontSize: '14px',
+  opacity: '0.7',
+  left: '100px',
+  position: 'absolute'
+}
 
 const Report = ({ report }) => {
   return report.length ? (
-    <section>
-      <div className="row">
-        <div />
-        <div><h3>San Ysidro</h3></div>
-        <div><h3>Otay</h3></div>
-      </div>
-      <div className="row">
-        <h5>Carros</h5>
-      </div>
-      <div className="row">
-        <div><h4>Normal</h4></div>
-        <div><span className="type-a">{report[0].content.car.normal.time}</span></div>
-        <div><span>{report[1].content.car.normal.time}</span></div>
-      </div>
-      <div className="row">
-        <div><h4>Ready Lane</h4></div>
-        <div><span className="type-a">{report[0].content.car.readyLine.time}</span></div>
-        <div><span>{report[1].content.car.readyLine.time}</span></div>
-      </div>
-      <div className="row">
-        <div><h4>Sentry</h4></div>
-        <div><span className="type-a">{report[0].content.car.sentry.time}</span></div>
-        <div><span>{report[1].content.car.sentry.time}</span></div>
-      </div>
-      <div className="line-break" />
-      <h5>Personas</h5>
-      <div className="row">
-        <div><h4>Normal</h4></div>
-        <div><span className="type-a">{report[0].content.people.normal.time}</span></div>
-        <div><span>{report[1].content.people.normal.time}</span></div>
-      </div>
-      <div className="row">
-        <div><h4>Ready Lane</h4></div>
-        <div><span className="type-a">{report[0].content.people.readyLine.time}</span></div>
-        <div><span>{report[1].content.people.readyLine.time}</span></div>
-      </div>
-      <div className="row">
-        <div><h4>Pedwest</h4></div>
-        <div><span className="type-a">{report[0].content.people.normal.time}</span></div>
-        <div />
-      </div>
-      <style jsx>{`
-        section {
-          background-color: white;
-          padding: 6px 5px;
-          margin-bottom: 12px;
-        }
+    <Table>
+      <TableBody displayRowCheckbox={false}>
+        <TableRow>
+          <TableRowColumn />
+          <TableRowColumn style={titleStyle}>San Ysidro</TableRowColumn>
+          <TableRowColumn style={titleStyle}>Otay</TableRowColumn>
+        </TableRow>
+        <TableRow displayBorder={false} style={typeWrapperStyle}>
+          <TableRowColumn style={typeStyle} colSpan="3">Carros <span style={timeStyle}>Espera en Minutos</span></TableRowColumn>
+        </TableRow>
+        <TableRow displayBorder={false}>
+          <TableRowColumn style={titleStyleSecondary}>Normal</TableRowColumn>
+          <TableRowColumn style={valueStylePrimary}>{report[0].content.car.normal.time}</TableRowColumn>
+          <TableRowColumn style={valueStyle}>{report[1].content.car.normal.time}</TableRowColumn>
+        </TableRow>
+        <TableRow displayBorder={false}>
+          <TableRowColumn style={titleStyleSecondary}>Ready Lane</TableRowColumn>
+          <TableRowColumn style={valueStylePrimary}>{report[0].content.car.readyLine.time}</TableRowColumn>
+          <TableRowColumn style={valueStyle}>{report[1].content.car.readyLine.time}</TableRowColumn>
+        </TableRow>
+        <TableRow>
+          <TableRowColumn style={titleStyleSecondary}>Sentry</TableRowColumn>
+          <TableRowColumn style={valueStylePrimary}>{report[0].content.car.sentry.time}</TableRowColumn>
+          <TableRowColumn style={valueStyle}>{report[1].content.car.sentry.time}</TableRowColumn>
+        </TableRow>
 
-        .row {
-          display: flex;
-          align-items: center;
-        }
-
-        .row div {
-          flex: 1;
-        }
-
-        h3 {
-          margin: 0;
-          color: #343740;
-          font-weight: normal;
-          text-align: center;
-        }
-
-        h4 {
-          margin: 0;
-          opacity: 0.6;
-          font-weight: normal;
-        }
-
-        h5 {
-          margin: 0;
-        }
-
-        span {
-          font-size: 1.8em;
-          font-weight: bold;
-          color: black;
-          text-align: center;
-          display: block;
-        }
-
-        .type-a {
-          color: #1b8ece;
-        }
-
-        p {
-          font-size: .6em;
-          opacity: 0.6;
-        }
-
-        .line-break {
-          height: 6px;
-        }
-      `}
-      </style>
-    </section>
-  ) : null;
+        <TableRow displayBorder={false} style={typeWrapperStyle}>
+          <TableRowColumn style={typeStyle} colSpan="3">Personas <span style={timeStyle}>Espera en Minutos</span></TableRowColumn>
+        </TableRow>
+        <TableRow displayBorder={false}>
+          <TableRowColumn style={titleStyleSecondary}>Normal</TableRowColumn>
+          <TableRowColumn style={valueStylePrimary}>{report[0].content.people.normal.time}</TableRowColumn>
+          <TableRowColumn style={valueStyle}>{report[1].content.people.normal.time}</TableRowColumn>
+        </TableRow>
+        <TableRow displayBorder={false}>
+          <TableRowColumn style={titleStyleSecondary}>Ready Lane</TableRowColumn>
+          <TableRowColumn style={valueStylePrimary}>{report[0].content.people.readyLine.time}</TableRowColumn>
+          <TableRowColumn style={valueStyle}>{report[1].content.people.readyLine.time}</TableRowColumn>
+        </TableRow>
+        <TableRow displayBorder={false}>
+          <TableRowColumn style={titleStyleSecondary}>Sentry</TableRowColumn>
+          <TableRowColumn style={valueStylePrimary}>{report[0].content.people.normal.time}</TableRowColumn>
+        </TableRow>
+      </TableBody>
+    </Table>
+  ) : null
 }
 
 Report.propTypes = {
   report: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-};
+}
 
-export default Report;
+export default Report
