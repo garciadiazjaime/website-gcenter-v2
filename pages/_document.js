@@ -1,6 +1,7 @@
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import flush from 'styled-jsx/server'
+
 import injectTapEventPlugin from 'react-tap-event-plugin'
 
 import { apiUrl } from '../services/report'
