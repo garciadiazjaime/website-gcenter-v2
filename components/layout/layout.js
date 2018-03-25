@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
-import injectTapEventPlugin from 'react-tap-event-plugin'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 import MainHeader from './main-header'
@@ -13,7 +12,6 @@ class Layout extends Component {
 
   componentDidMount() {
     (window.adsbygoogle = window.adsbygoogle || []).push({})
-    injectTapEventPlugin()
   }
 
   render() {

@@ -1,7 +1,7 @@
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import flush from 'styled-jsx/server'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import injectTapEventPlugin from 'react-tap-event-plugin'
 
 import { apiUrl } from '../services/report'
 
@@ -10,6 +10,10 @@ export default class MyDocument extends Document {
     const { html, head, errorHtml, chunks } = renderPage()
     const styles = flush()
     return { html, head, errorHtml, chunks, styles }
+  }
+
+  componentDidMount() {
+    injectTapEventPlugin()
   }
 
   render() {
