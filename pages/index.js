@@ -14,7 +14,7 @@ class HomePage extends Component {
   async componentDidMount() {
     const report = await getReport('tijuana')
     this.setState({ report }) // eslint-disable-line
-    saveGeoLocation()
+    // saveGeoLocation()
   }
 
   render() {

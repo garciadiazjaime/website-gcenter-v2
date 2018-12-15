@@ -4,9 +4,6 @@ import Link from 'next/link'
 const items = [{
   href: '/',
   title: 'Reporte Oficial'
-}, {
-  href: '/reporte-usuarios',
-  title: 'Reporte Usuarios'
 }]
 
 const isItemActive = (href, url) => href === url ? 'active' : ''
