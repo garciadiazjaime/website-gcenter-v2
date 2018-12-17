@@ -3,15 +3,6 @@ import React from 'react';
 const MainFooter = () => (
   <footer>
     <div className="content">
-      <p>
-        <strong>GaritaCenter</strong> es un servicio web con el objetivo de brindar el reporte de garitas entre México (Tijuana) y Estados Unidos (San Diego), en un formato amigable.
-      </p>
-      <p>
-        En <strong>GaritaCenter</strong> nos interesa tu opinión, si eres de Tijuana y cruzas seguido, mándanos un mensaje sobre cómo podemos mejorar el reporte de garitas.
-      </p>
-      <p>
-        Síguenos en:
-      </p>
       <ul className="social-links">
         <li>
           <a href="https://www.facebook.com/garitacenter/" target="_blank" rel="noopener noreferrer">
@@ -39,21 +30,18 @@ const MainFooter = () => (
         </li>
       </ul>
       <p>
-        Amigos de GaritaCenter:
+        <strong>GaritaCenter</strong> es un servicio para brindar el reporte de garitas entre México (Tijuana) y Estados Unidos (San Diego), en un formato amigable.
       </p>
-      <ul>
-        <li><a href="http://www.playami.com/" target="_blank" rel="noopener noreferrer">Directorio Playas de Tijuana</a></li>
-        <li><a href="http://www.somospool.com" target="_blank" rel="noopener noreferrer">Pool</a></li>
-      </ul>
       <p>
-        <small>
-          El reporte de garitas de GaritaCenter es extraido de CBP. Los datos contenidos en este sitio son de carácter informativo.
-        </small>
+        <a href="http://www.playami.com/" target="_blank" rel="noopener noreferrer">Qué Comer en Playas?</a>
+      </p>
+      <p>
+        <small>El reporte de garitas es extraido de CBP.</small>
       </p>
     </div>
     <div className="powered">
       Todos los derechos reservados © GaritaCenter <br />
-      Reporte de garitas para San Ysidro y Otay | Tijuana <br />
+      Reporte de Garitas para San Ysidro y Otay | Tijuana <br />
       Un proyecto de <a href="http://www.mintitmedia.com" title="Diseño y Desarrollo Web en Tijuana" target="_blank" rel="noopener noreferrer">MINT</a>
     </div>
     <style jsx>{`

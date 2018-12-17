@@ -1,59 +1,46 @@
-import React from 'react';
+import React from 'react'
 import Link from 'next/link'
 
-class MainMenu extends React.Component {
+const items = [{
+  href: '/',
+  title: 'Reporte Oficial'
+}]
 
-  constructor(props) {
-    super(props);
-    this.items = [{
-      href: '/',
-      title: 'Reporte Oficial'
-    }, {
-      href: '/reporte-usuarios',
-      title: 'Reporte Usuarios'
-    }];
-  }
+const isItemActive = (href, url) => href === url ? 'active' : ''
 
-  isItemActive(href) {
-    return href === this.props.url ? 'active' : ''
-  }
+const MainMenu = ({ url }) => (
+  <nav>
+    {
+      items.map(item => (
+        <Link href={item.href} key={item.href}>
+          <a className={isItemActive(item.href, url)}>{item.title}</a>
+        </Link>))
+    }
+    <style jsx>{`
+      nav {
+        padding-left: 30px;
+        margin-top: 4px;
+      }
 
-  render() {
-    return (
-      <nav>
-        {
-          this.items.map(item => (
-            <Link href={item.href} key={item.href}>
-              <a className={this.isItemActive(item.href)}>{item.title}</a>
-            </Link>))
-        }
-        <style jsx>{`
-          nav {
-            padding-left: 30px;
-            margin-top: 10px;
-          }
+      a {
+        background-color: #4b4f5c;
+        color: white;
+        display: inline-block;
+        height: 30px;
+        margin: 0 3px;
+        padding: 2px 10px;
+        text-decoration: none;
+        line-height: 30px;
+        border-radius: 3px 3px 0 0;
+      }
 
-          a {
-            background-color: #4b4f5c;
-            color: white;
-            display: inline-block;
-            height: 30px;
-            margin: 0 3px;
-            padding: 5px 10px;
-            text-decoration: none;
-            line-height: 30px;
-            border-radius: 3px 3px 0 0;
-          }
-
-          a.active {
-            background: white;
-            color: #555;
-          }
-        `}
-        </style>
-      </nav>
-    );
-  }
-}
+      a.active {
+        background: white;
+        color: #555;
+      }
+    `}
+    </style>
+  </nav>
+)
 
 export default MainMenu;

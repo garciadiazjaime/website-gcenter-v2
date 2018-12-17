@@ -1,4 +1,4 @@
-export const getPort = (port) => {
+export const getPort = port => {
   switch(port) {
     case '1':
       return 'San Ysidro'
@@ -9,7 +9,7 @@ export const getPort = (port) => {
   }
 }
 
-export const getEntry = (entry) => {
+export const getEntry = entry => {
   switch(entry) {
     case '1':
       return 'Normal'
@@ -24,7 +24,7 @@ export const getEntry = (entry) => {
   }
 }
 
-export const getType = (type) => {
+export const getType = type => {
   switch(type) {
     case '1':
       return 'Carro'
@@ -35,7 +35,7 @@ export const getType = (type) => {
   }
 }
 
-export const getTime = (time) => {
+export const getTime = time => {
   switch(time) {
     case '1':
       return '15 minutos'
@@ -54,7 +54,7 @@ export const getTime = (time) => {
   }
 }
 
-export const formatTime = (time) => {
+export const formatTime = time => {
   const date = new Date(time)
   return date.toLocaleString('en-US', { hour: 'numeric',minute:'numeric', hour12: true });
 }

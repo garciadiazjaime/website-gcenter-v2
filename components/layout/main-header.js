@@ -6,7 +6,7 @@ const MainHeader = ({ city }) => (
   <header>
     <Link href="/">
       <a href="/">
-        <img src="/static/images/garita-center-logo.png" alt="GaritaCenter - Reporte de Garitas" />
+        <img src="/static/images/garita-center-logo.jpg" alt="GaritaCenter - Reporte de Garitas" />
       </a>
     </Link>
     <div>

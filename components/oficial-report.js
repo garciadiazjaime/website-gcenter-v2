@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const Report = ({ report }) => {
-  return (
+  return report.length ? (
     <section>
       <div className="row">
         <div />
@@ -46,7 +46,6 @@ const Report = ({ report }) => {
         <div><span className="type-a">{report[0].content.people.normal.time}</span></div>
         <div />
       </div>
-      <p>Reporte de Garitas actualizado hace </p>
       <style jsx>{`
         section {
           background-color: white;
@@ -98,11 +97,11 @@ const Report = ({ report }) => {
       `}
       </style>
     </section>
-  );
+  ) : null
 }
 
 Report.propTypes = {
   report: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-};
+}
 
-export default Report;
+export default Report
