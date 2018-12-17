@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Head from 'next/head'
 
 import MainHeader from './main-header'
-import MainMenu from './main-menu'
 import MainFooter from './main-footer'
 
 
@@ -21,7 +20,7 @@ class Layout extends Component {
         </Head>
 
         <MainHeader city="Tijuana / San Diego" />
-        <MainMenu url={this.props.url} />
+
 
         {this.props.children}
 

@@ -55,7 +55,7 @@ const MainFooter = () => (
 
       ul {
         list-style-type: none;
-        padding-left: 10px;
+        padding-left: 0;
       }
 
       small {
