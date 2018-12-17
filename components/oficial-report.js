@@ -1,8 +1,42 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+function getReport(report) {
+  return report && report.length ? report : [{
+    content: {
+      car: {
+        normal : {},
+        readyLine: {},
+        sentry: {}
+      },
+      people: {
+        normal : {},
+        readyLine: {},
+        sentry: {}
+      }
+    }
+  }, {
+    content: {
+      car: {
+        normal : {},
+        readyLine: {},
+        sentry: {}
+      },
+      people: {
+        normal : {},
+        readyLine: {},
+        sentry: {}
+      }
+    }
+  }]
+}
+
 const Report = ({ report }) => {
-  return report.length ? (
+  const data = getReport(report)
+  const { content: sanYsidro } = data[0]
+  const { content: otay } = data[1]
+
+  return (
     <section>
       <div className="row">
         <div />
@@ -14,18 +48,18 @@ const Report = ({ report }) => {
       </div>
       <div className="row">
         <div><h4>Normal</h4></div>
-        <div><span className="type-a">{report[0].content.car.normal.time}</span></div>
-        <div><span>{report[1].content.car.normal.time}</span></div>
+        <div><span className="type-a">{sanYsidro.car.normal.time}</span></div>
+        <div><span>{otay.car.normal.time}</span></div>
       </div>
       <div className="row">
         <div><h4>Ready Lane</h4></div>
-        <div><span className="type-a">{report[0].content.car.readyLine.time}</span></div>
-        <div><span>{report[1].content.car.readyLine.time}</span></div>
+        <div><span className="type-a">{sanYsidro.car.readyLine.time}</span></div>
+        <div><span>{otay.car.readyLine.time}</span></div>
       </div>
       <div className="row">
         <div><h4>Sentry</h4></div>
-        <div><span className="type-a">{report[0].content.car.sentry.time}</span></div>
-        <div><span>{report[1].content.car.sentry.time}</span></div>
+        <div><span className="type-a">{sanYsidro.car.sentry.time}</span></div>
+        <div><span>{otay.car.sentry.time}</span></div>
       </div>
 
       <br />
@@ -33,17 +67,17 @@ const Report = ({ report }) => {
       <h5>Personas</h5>
       <div className="row">
         <div><h4>Normal</h4></div>
-        <div><span className="type-a">{report[0].content.people.normal.time}</span></div>
-        <div><span>{report[1].content.people.normal.time}</span></div>
+        <div><span className="type-a">{sanYsidro.people.normal.time}</span></div>
+        <div><span>{otay.people.normal.time}</span></div>
       </div>
       <div className="row">
         <div><h4>Ready Lane</h4></div>
-        <div><span className="type-a">{report[0].content.people.readyLine.time}</span></div>
-        <div><span>{report[1].content.people.readyLine.time}</span></div>
+        <div><span className="type-a">{sanYsidro.people.readyLine.time}</span></div>
+        <div><span>{otay.people.readyLine.time}</span></div>
       </div>
       <div className="row">
         <div><h4>Pedwest</h4></div>
-        <div><span className="type-a">{report[0].content.people.normal.time}</span></div>
+        <div><span className="type-a">{sanYsidro.people.normal.time}</span></div>
         <div />
       </div>
       <style jsx>{`
@@ -97,7 +131,7 @@ const Report = ({ report }) => {
       `}
       </style>
     </section>
-  ) : null
+  )
 }
 
 Report.propTypes = {

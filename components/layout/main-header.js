@@ -21,6 +21,9 @@ const MainHeader = ({ city }) => (
       }
 
       a {
+        display: block;
+        width: 41px;
+        height: 44px;
         margin-right: 5px;
       }
 
