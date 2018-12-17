@@ -23,7 +23,7 @@
     "analyze": "cross-env ANALYZE=1 next build",
     "google:clean": "gsutil -m rm -r gs://www.garitacenter.com/_next",
     "google:upload": "gsutil -m cp -r ./out/. gs://www.garitacenter.com",
-    "deploy": "npm run export && npm run google:clean && npm run google:upload"
+    "deploy": "npm run google:clean && npm run google:upload"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.3",
