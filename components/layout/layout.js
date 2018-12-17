@@ -25,13 +25,15 @@ class Layout extends Component {
 
         {this.props.children}
 
-        <ins
-          className="adsbygoogle"
-          style={{ display: 'block' }}
-          data-ad-client="ca-pub-2643588035417760"
-          data-ad-slot="8651758334"
-          data-ad-format="auto"
-        />
+        <div className="munchis">
+          <ins
+            className="adsbygoogle"
+            style={{ display: 'block' }}
+            data-ad-client="ca-pub-2643588035417760"
+            data-ad-slot="8651758334"
+            data-ad-format="auto"
+          />
+        </div>
 
         <MainFooter />
 
@@ -44,6 +46,11 @@ class Layout extends Component {
 
             a {
               text-decoration: none;
+            }
+
+            .munchis {
+              margin-top: 20px;
+              min-height: 42px;
             }
           `}
         </style>
