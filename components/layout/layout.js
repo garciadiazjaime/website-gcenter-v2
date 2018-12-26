@@ -12,14 +12,16 @@ class Layout extends Component {
   }
 
   render() {
+    const { meta } = this.props
+
     return (
       <div>
         <Head>
-          <title>GaritaCenter - Reporte de Garitas para San Ysidro y Otay | Tijuana</title>
-          <meta name="description" content="Reporte de Garitas en Tijuana / San Diego para la Garita de San Ysidrio y Otay. Garitacenter, tiempo en línea fronteriza." />
+          <title>{meta.title}</title>
+          <meta name="description" content={meta.description} />
         </Head>
 
-        <MainHeader city="Tijuana / San Diego" />
+        <MainHeader city={meta.city} />
 
 
         {this.props.children}

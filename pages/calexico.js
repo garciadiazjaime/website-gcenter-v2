@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import 'isomorphic-unfetch'
 
 import Layout from '../components/layout/layout'
-import Report from '../components/report-tijuana'
+import Report from '../components/report-calexico'
 import { getReport } from '../services/report'
 
 class HomePage extends Component {
@@ -11,16 +11,16 @@ class HomePage extends Component {
   }
 
   async componentDidMount() {
-    const report = await getReport('tijuana')
+    const report = await getReport('calexico')
     this.setState({ report }) // eslint-disable-line
   }
 
   render() {
     const { report } = this.state
     const meta = {
-      city: 'Tijuana / San Diego',
-      title: 'GaritaCenter - Reporte de Garitas para San Ysidro y Otay | Tijuana',
-      description: 'Reporte de Garitas en Tijuana / San Diego para la Garita de San Ysidrio y Otay. Garitacenter, tiempo en línea fronteriza.'
+      city: 'Mexicali / Calexico',
+      title: 'GaritaCenter - Reporte de Garitas para Calexico | Mexicali',
+      description: 'Reporte de Garitas de Mexicali para la Garita de Calexico. Garitacenter, tiempo en línea fronteriza.'
     }
 
     return (
