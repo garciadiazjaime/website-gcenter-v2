@@ -5,7 +5,8 @@ const { ANALYZE } = process.env
 module.exports = {
   exportPathMap: function() {
     return {
-      '/': { page: '/' }
+      '/': { page: '/' },
+      '/calexico': { page: '/calexico' }
     }
   },
   webpack: (config, { dev }) => {
