@@ -67,18 +67,18 @@ const Report = ({ report }) => {
       </div>
       <div className="row">
         <div><h4>Normal</h4></div>
-        <div><span className="type-a">{sanYsidro.standard.vehicle.time}</span></div>
-        <div><span>{otay.standard.vehicle.time}</span></div>
+        <div><span className="type-a">{sanYsidro.standard.vehicle && sanYsidro.standard.vehicle.time}</span></div>
+        <div><span>{otay.standard.vehicle && otay.standard.vehicle.time}</span></div>
       </div>
       <div className="row">
         <div><h4>Ready Lane</h4></div>
-        <div><span className="type-a">{sanYsidro.readyLane.vehicle.time}</span></div>
-        <div><span>{otay.readyLane.vehicle.time}</span></div>
+        <div><span className="type-a">{sanYsidro.readyLane.vehicle && sanYsidro.readyLane.vehicle.time}</span></div>
+        <div><span>{otay.readyLane.vehicle && otay.readyLane.vehicle.time}</span></div>
       </div>
       <div className="row">
         <div><h4>Sentry</h4></div>
-        <div><span className="type-a">{sanYsidro.sentri.vehicle.time}</span></div>
-        <div><span>{otay.sentri.vehicle.time}</span></div>
+        <div><span className="type-a">{sanYsidro.sentri.vehicle && sanYsidro.sentri.vehicle.time}</span></div>
+        <div><span>{otay.sentri.vehicle && otay.sentri.vehicle.time}</span></div>
       </div>
 
       <br />
@@ -86,17 +86,17 @@ const Report = ({ report }) => {
       <h5>Personas</h5>
       <div className="row">
         <div><h4>Normal</h4></div>
-        <div><span className="type-a">{sanYsidro.standard.pedestrian.time}</span></div>
-        <div><span>{otay.standard.pedestrian.time}</span></div>
+        <div><span className="type-a">{sanYsidro.standard.pedestrian && sanYsidro.standard.pedestrian.time}</span></div>
+        <div><span>{otay.standard.pedestrian && otay.standard.pedestrian.time}</span></div>
       </div>
       <div className="row">
         <div><h4>Ready Lane</h4></div>
-        <div><span className="type-a">{sanYsidro.readyLane.pedestrian.time}</span></div>
-        <div><span>{otay.readyLane.pedestrian.time}</span></div>
+        <div><span className="type-a">{sanYsidro.readyLane.pedestrian && sanYsidro.readyLane.pedestrian.time}</span></div>
+        <div><span>{otay.readyLane.pedestrian && otay.readyLane.pedestrian.time}</span></div>
       </div>
       <div className="row">
         <div><h4>Pedwest</h4></div>
-        <div><span className="type-a">{pedwest.standard.pedestrian.time}</span></div>
+        <div><span className="type-a">{pedwest.standard.pedestrian && pedwest.standard.pedestrian.time}</span></div>
         <div />
       </div>
       <style jsx>{`

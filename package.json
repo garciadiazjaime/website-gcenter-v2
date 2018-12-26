@@ -14,7 +14,7 @@
     "react-tap-event-plugin": "^3.0.2"
   },
   "scripts": {
-    "dev": "API_URL=http://0.0.0.0:3030 HOST=0.0.0.0 next dev",
+    "dev": "API_URL=https://api.garitacenter.com HOST=0.0.0.0 next dev",
     "build": "API_URL=https://api.garitacenter.com next build",
     "start": "cross-env node server.js",
     "lint": "eslint --ext .js,.js .",
