@@ -2,39 +2,58 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 function getReport(report) {
-  return report && report.length ? report : [{
-    content: {
-      car: {
-        normal : {},
-        readyLine: {},
-        sentry: {}
+  return report && report.length ? report[0] : {
+    report: {
+      sanYsidro: {
+        standard: {
+          pedestrian: {},
+          vehicle: {},
+        },
+        sentri: {
+          vehicle: {},
+        },
+        readyLane: {
+          pedestrian: {},
+          vehicle: {},
+        }
       },
-      people: {
-        normal : {},
-        readyLine: {},
-        sentry: {}
+      otay: {
+        standard: {
+          pedestrian: {},
+          vehicle: {},
+        },
+        sentri: {
+          vehicle: {},
+        },
+        readyLane: {
+          pedestrian: {},
+          vehicle: {},
+        }
+      },
+      pedwest: {
+        standard: {
+          pedestrian: {},
+          vehicle: {},
+        },
+        sentri: {
+          vehicle: {},
+        },
+        readyLane: {
+          pedestrian: {},
+          vehicle: {},
+        }
       }
     }
-  }, {
-    content: {
-      car: {
-        normal : {},
-        readyLine: {},
-        sentry: {}
-      },
-      people: {
-        normal : {},
-        readyLine: {},
-        sentry: {}
-      }
-    }
-  }]
+  }
 }
 
 const Report = ({ report }) => {
   const data = getReport(report)
-  const { content: sanYsidro } = data[0]
-  const { content: otay } = data[1]
+  const { report: {
+    sanYsidro,
+    otay,
+    pedwest }
+  } = data
 
   return (
     <section>
@@ -48,18 +67,18 @@ const Report = ({ report }) => {
       </div>
       <div className="row">
         <div><h4>Normal</h4></div>
-        <div><span className="type-a">{sanYsidro.car.normal.time}</span></div>
-        <div><span>{otay.car.normal.time}</span></div>
+        <div><span className="type-a">{sanYsidro.standard.vehicle.time}</span></div>
+        <div><span>{otay.standard.vehicle.time}</span></div>
       </div>
       <div className="row">
         <div><h4>Ready Lane</h4></div>
-        <div><span className="type-a">{sanYsidro.car.readyLine.time}</span></div>
-        <div><span>{otay.car.readyLine.time}</span></div>
+        <div><span className="type-a">{sanYsidro.readyLane.vehicle.time}</span></div>
+        <div><span>{otay.readyLane.vehicle.time}</span></div>
       </div>
       <div className="row">
         <div><h4>Sentry</h4></div>
-        <div><span className="type-a">{sanYsidro.car.sentry.time}</span></div>
-        <div><span>{otay.car.sentry.time}</span></div>
+        <div><span className="type-a">{sanYsidro.sentri.vehicle.time}</span></div>
+        <div><span>{otay.sentri.vehicle.time}</span></div>
       </div>
 
       <br />
@@ -67,17 +86,17 @@ const Report = ({ report }) => {
       <h5>Personas</h5>
       <div className="row">
         <div><h4>Normal</h4></div>
-        <div><span className="type-a">{sanYsidro.people.normal.time}</span></div>
-        <div><span>{otay.people.normal.time}</span></div>
+        <div><span className="type-a">{sanYsidro.standard.pedestrian.time}</span></div>
+        <div><span>{otay.standard.pedestrian.time}</span></div>
       </div>
       <div className="row">
         <div><h4>Ready Lane</h4></div>
-        <div><span className="type-a">{sanYsidro.people.readyLine.time}</span></div>
-        <div><span>{otay.people.readyLine.time}</span></div>
+        <div><span className="type-a">{sanYsidro.readyLane.pedestrian.time}</span></div>
+        <div><span>{otay.readyLane.pedestrian.time}</span></div>
       </div>
       <div className="row">
         <div><h4>Pedwest</h4></div>
-        <div><span className="type-a">{sanYsidro.people.normal.time}</span></div>
+        <div><span className="type-a">{pedwest.standard.pedestrian.time}</span></div>
         <div />
       </div>
       <style jsx>{`
