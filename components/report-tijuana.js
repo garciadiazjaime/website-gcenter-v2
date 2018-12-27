@@ -102,7 +102,7 @@ const Report = ({ report }) => {
       <style jsx>{`
         section {
           background-color: white;
-          padding: 15px 5px;
+          padding: 10px 5px;
         }
 
         .row {

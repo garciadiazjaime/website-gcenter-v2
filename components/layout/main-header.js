@@ -17,7 +17,7 @@ const MainHeader = ({ city }) => (
       header {
         display: flex;
         align-items: center;
-        padding: 8px 5px;
+        padding: 6px 5px;
       }
 
       a {

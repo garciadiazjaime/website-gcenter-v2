@@ -6,7 +6,8 @@ module.exports = {
   exportPathMap: function() {
     return {
       '/': { page: '/' },
-      '/calexico': { page: '/calexico' }
+      '/calexico': { page: '/calexico' },
+      '/el-paso': { page: '/el-paso' }
     }
   },
   webpack: (config, { dev }) => {
