@@ -20,7 +20,7 @@ class HomePage extends Component {
     const meta = {
       city: 'Tijuana / San Diego',
       title: 'GaritaCenter - Reporte de Garitas para San Ysidro y Otay | Tijuana',
-      description: 'Reporte de Garitas en Tijuana / San Diego para la Garita de San Ysidrio y Otay. Garitacenter, tiempo en línea fronteriza.'
+      description: 'Reporte de Garitas en Tijuana / San Diego para la Garita de San Ysidro y Otay. Garitacenter, tiempo en línea fronteriza.'
     }
 
     return (
