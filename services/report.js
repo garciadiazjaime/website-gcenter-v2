@@ -12,8 +12,7 @@ export async function getReport(city = 'tijuana') {
   const cacheKey = `report:${city}`
   let cache = JSON.parse(sessionStorage && sessionStorage.getItem(cacheKey))
 
-  const skipCache = true
-  if (skipCache || !cache || !cache.report || !cache.report.length || hasExpired(cache.timestamp)) {
+  if (!cache || !cache.report || hasExpired(cache.timestamp)) {
     const response = await fetch(`${apiUrl}/report?city=${city}`)
     const report = await response.json()
     const data = {
