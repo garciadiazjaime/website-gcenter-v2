@@ -3,6 +3,14 @@ import React from 'react';
 const MainFooter = ({ cities }) => (
   <footer>
     <div className="content">
+      <h5>Reporte de Garitas para otras ciudades</h5>
+      <ul>
+        <li><a href="/" title="Garita de Tijuana - San Diegos">Tijuana - San Diego</a></li>
+        <li><a href="/calexico" title="Garita de Mexicali - Calexico">Mexicali - Calexico</a></li>
+        <li><a href="/el-paso" title="Garita de Ciudad Juarez - El Paso">Ciudad Juarez - El Paso</a></li>
+      </ul>
+    </div>
+    <div className="content">
       <ul className="social-links">
         <li>
           <a href="https://www.facebook.com/garitacenter/" target="_blank" rel="noopener noreferrer">
