@@ -26,3 +26,18 @@ export async function getReport(city = 'tijuana') {
 
   return cache.report
 }
+
+export function getEntryTime(ports, keyString) {
+  if (!ports || !keyString) {
+    return null
+  }
+
+  const value = keyString.split('.').reduce((item, key) => {
+    if (item && item[key]) {
+      return item[key]
+    }
+    return ''
+  }, ports)
+
+  return value
+}

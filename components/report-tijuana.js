@@ -1,60 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function getReport(report) {
-  return report && report.length ? report[0] : {
-    report: {
-      sanYsidro: {
-        standard: {
-          pedestrian: {},
-          vehicle: {},
-        },
-        sentri: {
-          vehicle: {},
-        },
-        readyLane: {
-          pedestrian: {},
-          vehicle: {},
-        }
-      },
-      otay: {
-        standard: {
-          pedestrian: {},
-          vehicle: {},
-        },
-        sentri: {
-          vehicle: {},
-        },
-        readyLane: {
-          pedestrian: {},
-          vehicle: {},
-        }
-      },
-      pedwest: {
-        standard: {
-          pedestrian: {},
-          vehicle: {},
-        },
-        sentri: {
-          vehicle: {},
-        },
-        readyLane: {
-          pedestrian: {},
-          vehicle: {},
-        }
-      }
-    }
-  }
-}
+import { getEntryTime } from '../services/report';
+
 
 const Report = ({ report }) => {
-  const data = getReport(report)
-  const { report: {
-    sanYsidro,
-    otay,
-    pedwest }
-  } = data
-
   return (
     <section>
       <div className="row">
@@ -67,18 +17,42 @@ const Report = ({ report }) => {
       </div>
       <div className="row">
         <div><h4>Normal</h4></div>
-        <div><span className="type-a">{sanYsidro.standard.vehicle && sanYsidro.standard.vehicle.time}</span></div>
-        <div><span>{otay.standard.vehicle && otay.standard.vehicle.time}</span></div>
+        <div>
+          <span className="type-a">
+            {getEntryTime(report.report, 'sanYsidro.vehicle.standard.time')}
+          </span>
+        </div>
+        <div>
+          <span>
+            {getEntryTime(report.report, 'otay.vehicle.standard.time')}
+          </span>
+        </div>
       </div>
       <div className="row">
         <div><h4>Ready Lane</h4></div>
-        <div><span className="type-a">{sanYsidro.readyLane.vehicle && sanYsidro.readyLane.vehicle.time}</span></div>
-        <div><span>{otay.readyLane.vehicle && otay.readyLane.vehicle.time}</span></div>
+        <div>
+          <span className="type-a">
+            {getEntryTime(report.report, 'sanYsidro.vehicle.readyLane.time')}
+          </span>
+        </div>
+        <div>
+          <span>
+            {getEntryTime(report.report, 'otay.vehicle.readyLane.time')}
+          </span>
+        </div>
       </div>
       <div className="row">
         <div><h4>Sentry</h4></div>
-        <div><span className="type-a">{sanYsidro.sentri.vehicle && sanYsidro.sentri.vehicle.time}</span></div>
-        <div><span>{otay.sentri.vehicle && otay.sentri.vehicle.time}</span></div>
+        <div>
+          <span className="type-a">
+            {getEntryTime(report.report, 'sanYsidro.vehicle.sentri.time')}
+          </span>
+        </div>
+        <div>
+          <span>
+            {getEntryTime(report.report, 'otay.vehicle.sentri.time')}
+          </span>
+        </div>
       </div>
 
       <br />
@@ -86,17 +60,37 @@ const Report = ({ report }) => {
       <h5>Personas</h5>
       <div className="row">
         <div><h4>Normal</h4></div>
-        <div><span className="type-a">{sanYsidro.standard.pedestrian && sanYsidro.standard.pedestrian.time}</span></div>
-        <div><span>{otay.standard.pedestrian && otay.standard.pedestrian.time}</span></div>
+        <div>
+          <span className="type-a">
+            {getEntryTime(report.report, 'sanYsidro.pedestrian.standard.time')}
+          </span>
+        </div>
+        <div>
+          <span>
+            {getEntryTime(report.report, 'otay.pedestrian.standard.time')}
+          </span>
+        </div>
       </div>
       <div className="row">
         <div><h4>Ready Lane</h4></div>
-        <div><span className="type-a">{sanYsidro.readyLane.pedestrian && sanYsidro.readyLane.pedestrian.time}</span></div>
-        <div><span>{otay.readyLane.pedestrian && otay.readyLane.pedestrian.time}</span></div>
+        <div>
+          <span className="type-a">
+            {getEntryTime(report.report, 'sanYsidro.pedestrian.readyLane.time')}
+          </span>
+        </div>
+        <div>
+          <span>
+            {getEntryTime(report.report, 'otay.pedestrian.readyLane.time')}
+          </span>
+        </div>
       </div>
       <div className="row">
         <div><h4>Pedwest</h4></div>
-        <div><span className="type-a">{pedwest.standard.pedestrian && pedwest.standard.pedestrian.time}</span></div>
+        <div>
+          <span className="type-a">
+            {getEntryTime(report.report, 'pedwest.pedestrian.standard.time')}
+          </span>
+        </div>
         <div />
       </div>
       <style jsx>{`
@@ -154,7 +148,7 @@ const Report = ({ report }) => {
 }
 
 Report.propTypes = {
-  report: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  report: PropTypes.shape({}).isRequired,
 }
 
 export default Report

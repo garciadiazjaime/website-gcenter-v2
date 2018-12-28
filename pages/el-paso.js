@@ -18,7 +18,12 @@ class HomePage extends Component {
   render() {
     const { report } = this.state
     const meta = {
-      city: 'Ciudad Juarez / El Paso',
+      cities: {
+        from: 'Ciudad Juarez',
+        to: 'El Paso',
+        header: 'Ciudad Juarez / El Paso',
+        footer: 'El Paso | Ciudad Juarez'
+      },
       title: 'GaritaCenter - Reporte de Garitas para Ciudad Juarez - El Paso',
       description: 'Reporte de Garitas en Ciudad Juarez / El Paso para la Garita de Bridge Americas, Paso Norte, Stanton y Ysleta. Garitacenter, tiempo en línea fronteriza.'
     }

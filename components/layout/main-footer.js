@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MainFooter = () => (
+const MainFooter = ({ cities }) => (
   <footer>
     <div className="content">
       <ul className="social-links">
@@ -30,7 +30,7 @@ const MainFooter = () => (
         </li>
       </ul>
       <p>
-        <strong>GaritaCenter</strong> es un servicio para brindar el reporte de garitas entre México (Tijuana) y Estados Unidos (San Diego), en un formato amigable.
+        <strong>GaritaCenter</strong> es un servicio para brindar el reporte de garitas entre México ({cities.from}) y Estados Unidos ({cities.to}), en un formato amigable.
       </p>
       <p>
         <a href="http://www.playami.com/" target="_blank" rel="noopener noreferrer">Qué Comer en Playas?</a>
@@ -41,7 +41,7 @@ const MainFooter = () => (
     </div>
     <div className="powered">
       Todos los derechos reservados © GaritaCenter <br />
-      Reporte de Garitas para San Ysidro y Otay | Tijuana <br />
+      Reporte de Garitas para {cities.footer} <br />
       Un proyecto de <a href="http://www.mintitmedia.com" title="Diseño y Desarrollo Web en Tijuana" target="_blank" rel="noopener noreferrer">MINT</a>
     </div>
     <style jsx>{`

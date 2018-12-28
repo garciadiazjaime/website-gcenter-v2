@@ -7,7 +7,7 @@ import { getReport } from '../services/report'
 
 class HomePage extends Component {
   state = {
-    report: []
+    report: {}
   }
 
   async componentDidMount() {
@@ -18,7 +18,12 @@ class HomePage extends Component {
   render() {
     const { report } = this.state
     const meta = {
-      city: 'Tijuana / San Diego',
+      cities: {
+        from: 'Tijuana',
+        to: 'San Diego',
+        header: 'Tijuana / San Diego',
+        footer: 'San Ysidro y Otay | Tijuana'
+      },
       title: 'GaritaCenter - Reporte de Garitas para San Ysidro y Otay | Tijuana',
       description: 'Reporte de Garitas en Tijuana / San Diego para la Garita de San Ysidro y Otay. Garitacenter, tiempo en línea fronteriza.'
     }

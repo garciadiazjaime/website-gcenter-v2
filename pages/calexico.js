@@ -7,7 +7,7 @@ import { getReport } from '../services/report'
 
 class HomePage extends Component {
   state = {
-    report: []
+    report: {}
   }
 
   async componentDidMount() {
@@ -18,7 +18,12 @@ class HomePage extends Component {
   render() {
     const { report } = this.state
     const meta = {
-      city: 'Mexicali / Calexico',
+      cities: {
+        from: 'Mexicali',
+        to: 'Calexico',
+        header: 'Mexicali / Calexico',
+        footer: 'Calexico | Mexicali'
+      },
       title: 'GaritaCenter - Reporte de Garitas para Calexico | Mexicali',
       description: 'Reporte de Garitas de Mexicali para la Garita de Calexico. Garitacenter, tiempo en línea fronteriza.'
     }

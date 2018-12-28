@@ -1,66 +1,51 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function getReport(report) {
-  return report && report.length ? report[0] : {
-    report: {
-      east: {
-        standard: {
-          vehicle: {},
-        },
-        readyLane: {
-          vehicle: {},
-        }
-      },
-      west: {
-        readyLane: {
-          pedestrian: {},
-        },
-        sentri: {
-          vehicle: {},
-        },
-        standard: {
-          vehicle: {},
-          pedestrian: {},
-        },
-      }
-    }
-  }
-}
+import { getEntryTime } from '../services/report';
 
 const Report = ({ report }) => {
-  const data = getReport(report)
-  const {
-    report: {
-      east: port1,
-      west: port2,
-    }
-  } = data
-
   return (
     <section>
       <div className="row">
         <div />
-        <div><h3>West</h3></div>
         <div><h3>East</h3></div>
+        <div><h3>West</h3></div>
       </div>
       <div className="row">
         <h5>Carros</h5>
       </div>
       <div className="row">
         <div><h4>Normal</h4></div>
-        <div><span className="type-a">{port2.standard.vehicle.time}</span></div>
-        <div><span>{port1.standard.vehicle.time}</span></div>
+        <div>
+          <span className="type-a">
+            {getEntryTime(report.report, 'east.vehicle.standard.time')}
+          </span>
+        </div>
+        <div>
+          <span>
+            {getEntryTime(report.report, 'west.vehicle.standard.time')}
+          </span>
+        </div>
       </div>
-      <div className="row">
-        <div><h4>Sentry</h4></div>
-        <div><span className="type-a">{port2.sentri.vehicle.time}</span></div>
-        <div />
-      </div>
+
       <div className="row">
         <div><h4>Ready Lane</h4></div>
+        <div>
+          <span className="type-a">
+            {getEntryTime(report.report, 'east.vehicle.readyLane.time')}
+          </span>
+        </div>
         <div />
-        <div><span>{port1.readyLane.vehicle.time}</span></div>
+      </div>
+
+      <div className="row">
+        <div><h4>Sentry</h4></div>
+        <div />
+        <div>
+          <span>
+            {getEntryTime(report.report, 'west.vehicle.sentri.time')}
+          </span>
+        </div>
       </div>
 
       <br />
@@ -68,13 +53,21 @@ const Report = ({ report }) => {
       <h5>Personas</h5>
       <div className="row">
         <div><h4>Normal</h4></div>
-        <div><span className="type-a">{port2.standard.pedestrian.time}</span></div>
         <div />
+        <div>
+          <span>
+            {getEntryTime(report.report, 'west.pedestrian.standard.time')}
+          </span>
+        </div>
       </div>
       <div className="row">
-        <div><h4>Pedwest</h4></div>
-        <div><span className="type-a">{port2.readyLane.pedestrian.time}</span></div>
+        <div><h4>Ready Lane</h4></div>
         <div />
+        <div>
+          <span>
+            {getEntryTime(report.report, 'west.pedestrian.readyLane.time')}
+          </span>
+        </div>
       </div>
 
       <style jsx>{`
@@ -132,7 +125,7 @@ const Report = ({ report }) => {
 }
 
 Report.propTypes = {
-  report: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  report: PropTypes.shape({}).isRequired,
 }
 
 export default Report

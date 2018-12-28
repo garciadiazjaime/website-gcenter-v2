@@ -1,20 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function getEntryTime(ports, keyString) {
-  if (!ports || !keyString) {
-    return null
-  }
-
-  const value = keyString.split('.').reduce((item, key) => {
-    if (item && item[key]) {
-      return item[key]
-    }
-    return ''
-  }, ports)
-
-  return value
-}
+import { getEntryTime } from '../services/report';
 
 const Report = ({ report }) => {
   return (

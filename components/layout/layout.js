@@ -21,7 +21,7 @@ class Layout extends Component {
           <meta name="description" content={meta.description} />
         </Head>
 
-        <MainHeader city={meta.city} />
+        <MainHeader city={meta.cities.header} />
 
 
         {this.props.children}
@@ -36,7 +36,7 @@ class Layout extends Component {
           />
         </div>
 
-        <MainFooter />
+        <MainFooter cities={meta.cities} />
 
         <style jsx global>{`
             body {
