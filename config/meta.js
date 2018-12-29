@@ -6,8 +6,8 @@ const meta = {
       header: 'Tijuana / San Diego',
       footer: 'San Ysidro y Otay | Tijuana'
     },
-    title: 'GaritaCenter - Reporte de Garitas para San Ysidro y Otay | Tijuana',
-    description: 'Reporte de Garitas en Tijuana / San Diego para la Garita de San Ysidro y Otay. Garitacenter, tiempo en línea fronteriza.'
+    title: 'GaritaCenter Garitas - Reporte de Garitas para San Ysidro y Otay | Tijuana',
+    description: 'Garitas. Reporte de Garitas en Tijuana / San Diego para la Garita de San Ysidro y Otay. Garitacenter, tiempo en línea fronteriza.'
   },
   calexico: {
     cities: {
