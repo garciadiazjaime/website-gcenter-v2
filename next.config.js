@@ -6,8 +6,8 @@ module.exports = {
   exportPathMap: function() {
     return {
       '/': { page: '/' },
-      '/calexico': { page: '/calexico' },
-      '/el-paso': { page: '/el-paso' }
+      '/reporte-garitas-calexico': { page: '/reporte-garitas-calexico' },
+      '/reporte-garitas-el-paso': { page: '/reporte-garitas-el-paso' }
     }
   },
   webpack: (config, { dev }) => {

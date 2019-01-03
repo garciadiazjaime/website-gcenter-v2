@@ -6,8 +6,8 @@ const MainFooter = ({ cities }) => (
       <h5>Reporte de Garitas para otras ciudades</h5>
       <ul>
         <li><a href="/" title="Reporte de Garitas para Tijuana - San Diego">Tijuana - San Diego</a></li>
-        <li><a href="/calexico" title="Reporte de Garitas para Mexicali - Calexico">Mexicali - Calexico</a></li>
-        <li><a href="/el-paso" title="Reporte de Garitas para Ciudad Juarez - El Paso">Ciudad Juarez - El Paso</a></li>
+        <li><a href="/reporte-garitas-calexico" title="Reporte de Garitas para Mexicali - Calexico">Mexicali - Calexico</a></li>
+        <li><a href="/reporte-garitas-el-paso" title="Reporte de Garitas para Ciudad Juarez - El Paso">Ciudad Juarez - El Paso</a></li>
       </ul>
     </div>
     <div className="content">
@@ -43,7 +43,13 @@ const MainFooter = ({ cities }) => (
       <p>
         El <strong>Reporte de Garitas</strong> es patrocinado por:
         <br />
+        <a href="http://www.noticiasmexico.org" title="Noticias México" target="_blank" rel="noopener noreferrer">Noticias México</a>
+        <br />
+        <a href="http://www.eventostijuana.org" title="Eventos Tijuana" target="_blank" rel="noopener noreferrer">Eventos Tijuana</a>
+        <br />
         <a href="http://www.playami.com/" title="Qué Comer en Playas de Tijuana" target="_blank" rel="noopener noreferrer">Qué Comer en Playas?</a>
+        <br />
+        <a href="http://www.larutadelvinoensenada.com" title="La Ruta del Vino Ensenada" target="_blank" rel="noopener noreferrer">La Ruta del Vino Ensenada</a>
       </p>
       <p>
         <small>El <strong>Reporte de Garitas</strong> es extraido de CBP.</small>
