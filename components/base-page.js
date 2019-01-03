@@ -12,8 +12,8 @@ class BasePage extends Component {
   }
 
   async componentDidMount() {
-    const { city } = this.props;
-    const report = await getReport(city)
+    const { city, getReportHelper } = this.props;
+    const report = await (getReportHelper && getReportHelper(city) || getReport(city))
     this.setState({ report }) // eslint-disable-line
   }
 

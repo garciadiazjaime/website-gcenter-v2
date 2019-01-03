@@ -26,6 +26,13 @@ export async function getReport(city = 'tijuana') {
   return cache.report
 }
 
+export async function getReport7Days(city = 'tijuana') {
+  const response = await fetch(`${apiUrl}/report/last-7-days?city=${city}`)
+  const report = await response.json()
+
+  return report
+}
+
 export function getEntryTime(ports, keyString) {
   if (!ports || !keyString) {
     return null
