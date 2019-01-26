@@ -28,7 +28,17 @@ const meta = {
     },
     title: 'Reporte de Garitas para Ciudad Juarez - El Paso',
     description: 'Reporte de Garitas en Ciudad Juarez / El Paso para la Garita de Bridge Americas, Paso Norte, Stanton y Ysleta. Garitacenter, tiempo en línea fronteriza.'
-  }
+  },
+  laredo: {
+    cities: {
+      from: 'Nuevo Laredo',
+      to: 'Laredo',
+      header: 'Nuevo Laredo / Laredo',
+      footer: 'Laredo | Nuevo Laredo'
+    },
+    title: 'Reporte de Garitas para Laredo | Nuevo Laredo',
+    description: 'Reporte de Garitas en Nuevo Laredo / Laredo para la Garita de Laredo. Garitacenter, tiempo en línea fronteriza.'
+  },
 }
 
 export default meta;

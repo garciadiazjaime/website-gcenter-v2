@@ -13,6 +13,7 @@ const MainFooter = ({ cities }) => (
         <li><a href="/" title="Reporte de Garitas para Tijuana - San Diego">Tijuana - San Diego</a></li>
         <li><a href="/reporte-garitas-calexico" title="Reporte de Garitas para Mexicali - Calexico">Mexicali - Calexico</a></li>
         <li><a href="/reporte-garitas-el-paso" title="Reporte de Garitas para Ciudad Juarez - El Paso">Ciudad Juarez - El Paso</a></li>
+        <li><a href="/reporte-garitas-laredo" title="Reporte de Garitas para Nuevo Laredo - Laredo">Nuevo Laredo - Laredo</a></li>
       </ul>
     </div>
     <div className="content">
@@ -55,6 +56,8 @@ const MainFooter = ({ cities }) => (
         <a href="http://www.playami.com/" title="Qué Comer en Playas de Tijuana" target="_blank" rel="noopener noreferrer">Qué Comer en Playas?</a>
         <br />
         <a href="http://www.larutadelvinoensenada.com" title="La Ruta del Vino Ensenada" target="_blank" rel="noopener noreferrer">La Ruta del Vino Ensenada</a>
+        <br />
+        <a href="https://reporte-garitas.blogspot.com" title="Información de Garitas Tijuana" target="_blank" rel="noopener noreferrer">Información de Garitas Tijuana</a>
       </p>
       <p>
         <small>El <strong>Reporte de Garitas</strong> es extraido de CBP.</small>
@@ -64,6 +67,8 @@ const MainFooter = ({ cities }) => (
       Todos los derechos reservados © GaritaCenter <br />
       <strong>Reporte de Garitas</strong> para {cities.footer} <br />
       Un proyecto de <a href="http://www.mintitmedia.com" title="Software Development Tijuana" target="_blank" rel="noopener noreferrer">MINT</a>
+      <br />
+      Diseño de <a href="http://somospool.com" title="Branding Pool" target="_blank" rel="noopener noreferrer">Pool</a>
     </div>
     <style jsx>{`
       footer {
