@@ -1,23 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { getEntryTime } from '../services/report';
-
-function printReport(report, key) {
-  return Object.keys(report).map(day => {
-    return Object.keys(report[day]).map(hour => {
-      const port = report[day][hour]
-      return (
-        <p key={`${day}-${hour}`}>
-          Dia: {day} <br />
-          Hora: {hour} <br />
-          Puertas: {getEntryTime(port.report, `${key}.lanes`)} <br />
-          Tiempo: {getEntryTime(port.report, `${key}.time`)} <br />
-        </p>
-      )
-    })
-  })
-}
+import BarChart from './graphs/BarChart'
 
 const Report = ({ report }) => {
   return (
@@ -26,8 +10,10 @@ const Report = ({ report }) => {
         <h3>Reporte de Garitas de los Últimos 7 días</h3>
       </div>
       <div>
-        <h4>San Ysidro | Carros | Normal</h4>
-        {printReport(report, 'sanYsidro.vehicle.standard')}
+        {
+          Object.keys(report).length ?
+            <BarChart data={report} /> : null
+        }
       </div>
       
       <style jsx>{`

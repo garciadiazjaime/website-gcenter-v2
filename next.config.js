@@ -9,7 +9,7 @@ module.exports = {
       '/reporte-garitas-calexico': { page: '/reporte-garitas-calexico' },
       '/reporte-garitas-el-paso': { page: '/reporte-garitas-el-paso' },
       '/reporte-garitas-laredo': { page: '/reporte-garitas-laredo' },
-      '/reporte-garitas-7-dias': { page: '/reporte-garitas-7-dias' }
+      '/reporte-garitas-last-24hrs': { page: '/reporte-garitas-last-24hrs' }
     }
   },
   webpack: (config, { dev }) => {

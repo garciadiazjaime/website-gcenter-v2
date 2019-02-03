@@ -3,9 +3,9 @@ import React from 'react';
 const MainFooter = ({ cities }) => (
   <footer>
     <div className="content">
-      <h5>Reporte de Garitas Últimos 7 días</h5>
+      <h5>Reporte de Garitas Últimas 24 hrs</h5>
       <ul>
-        <li><a href="/reporte-garitas-7-dias?city=tijuana" title="Reporte de Garitas para Tijuana - San Diego">Tijuana - San Diego</a></li>
+        <li><a href="/reporte-garitas-last-24hrs?city=tijuana" title="Reporte de Garitas para Tijuana - San Diego">Tijuana - San Diego</a></li>
       </ul>
 
       <h5>Reporte de Garitas para otras ciudades</h5>
