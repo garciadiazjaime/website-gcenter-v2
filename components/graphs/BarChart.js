@@ -2,16 +2,22 @@ import React, { Component } from 'react'
 import * as d3 from 'd3';
 
 function get12hrsFormat(hr) {
-  if (hr === 0) {
+  const currentDate = new Date()
+  const currentHour = currentDate.getHours() - hr
+
+  if (currentHour < 0) {
+    return `${currentHour + 12 < 10 ? '0':''}${currentHour + 12} pm`
+  }
+  if (currentHour === 0) {
     return '12 am'
   }
-  if (hr < 12) {
-    return `${hr < 10 ? '0':''}${hr} am`
+  if (currentHour < 12) {
+    return `${currentHour < 10 ? '0':''}${currentHour} am`
   }
-  if (hr === 12) {
+  if (currentHour === 12) {
     return '12 pm'
   }
-  return `${hr < 22 ? '0': ''}${hr - 12} pm`
+  return `${currentHour < 22 ? '0': ''}${currentHour - 12} pm`
 }
 
 function getHrsFormat(hr) {
@@ -38,12 +44,12 @@ class Graph24hrs extends Component {
     .attr('height', height + margin.top + margin.bottom)
 
     const x = d3.scaleLinear()
-      .domain([0, 4])
+      .domain([0, Math.ceil(maxValue)])
       .range([0, width]);
     
-      const y = d3.scaleLinear()
-        .domain([0, 24])
-        .range([0, height]);
+    const y = d3.scaleLinear()
+      .domain([0, 24])
+      .range([0, height]);
                   
     svg.selectAll('rect')
       .data(data)
@@ -54,10 +60,11 @@ class Graph24hrs extends Component {
       .attr('width', d => x(d))
       .attr('height', () => (height / data.length) - 1)
       .attr('fill', (d, i) => {
+        const currentHour = new Date().getHours() - i
         if (d === maxValue) {
           return '#4d1919'
         }
-        if (i < 12) {
+        if (currentHour < 12 && currentHour > 0) {
           return '#9da1af'
         }
         return '#343740'

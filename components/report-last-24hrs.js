@@ -7,7 +7,7 @@ const Report = ({ report }) => {
   return (
     <section>
       <div className="row">
-        <h3>Reporte de Garitas de los Últimos 7 días</h3>
+        <h3>Tiempo promedio en Carro <br />de las últimas 24 hrs</h3>
       </div>
       <div>
         {
