@@ -7,7 +7,8 @@ const Report = ({ report }) => {
   return (
     <section>
       <div className="row">
-        <h3>Tiempo promedio en Carro <br />de las últimas 24 hrs</h3>
+        <h1>Últimas 24 horas San Ysidro</h1>
+        <h3>Cruce en carro</h3>
       </div>
       <div>
         {
@@ -21,14 +22,17 @@ const Report = ({ report }) => {
           background-color: white;
           padding: 10px 5px;
         }
-
-        .row {
-          display: flex;
+        
+        h1 {
+          margin: 0;
+          font-size: 1.4em;
         }
 
-        .row h4, .row h5, .row h4, .row span {
-          flex: 1;
+        h2 {
+          margin: 0;
+          font-size: 1em;
         }
+
 
         h3 {
           margin: 0  0 6px 0;

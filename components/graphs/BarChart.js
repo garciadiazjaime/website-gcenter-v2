@@ -24,6 +24,24 @@ function getHrsFormat(hr) {
   return `${hr} hr${hr !== 1 ? 's':''}`
 }
 
+function arrayAverage(data) {
+  return data.reduce((a,b) => a + b, 0) / data.length
+}
+
+function extractReport(data) {
+  const report = [...Array(24).keys()].map(hr => {
+    const { time } = data.sanYsidro.vehicle.standard[hr] || {}
+    if (time && time.length) {
+      const minutes = arrayAverage(time)
+      const hours = Math.round(minutes / 60 * 100) / 100;
+      return hours
+    }
+    return 0;
+  });
+
+  return report
+}
+
 class Graph24hrs extends Component {
 
   componentDidMount() {
@@ -32,7 +50,8 @@ class Graph24hrs extends Component {
 
   drawChart() {
     const { data } = this.props
-    const maxValue = Math.max(...data)
+    const report = extractReport(data)
+    const maxValue = Math.max(...report)
     
     const margin = {top: 20, right: 20, bottom: 70, left: 60}
     const width = 300 - margin.left - margin.right
@@ -52,13 +71,13 @@ class Graph24hrs extends Component {
       .range([0, height]);
                   
     svg.selectAll('rect')
-      .data(data)
+      .data(report)
       .enter()
       .append('rect')
       .attr('x', () => margin.left)
-      .attr('y', (d, i) => (i * height / data.length) + margin.top)
+      .attr('y', (d, i) => (i * height / report.length) + margin.top)
       .attr('width', d => x(d))
-      .attr('height', () => (height / data.length) - 1)
+      .attr('height', () => (height / report.length) - 1)
       .attr('fill', (d, i) => {
         const currentHour = new Date().getHours() - i
         if (d === maxValue) {
