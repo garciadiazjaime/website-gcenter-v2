@@ -8,6 +8,15 @@ function hasExpired(lastValue) {
   return ((currentValue - lastValue) / 1000) > waitSecs
 }
 
+function timeConvert(num){
+  const hours = Math.floor(num / 60);
+  let minutes = num % 60;
+  if (minutes < 10) {
+    minutes = `0${minutes}`
+  }
+  return `${hours}:${minutes}`;
+}
+
 export async function getReport(city = 'tijuana') {
   const cacheKey = `report:${city}`
   let cache = JSON.parse(sessionStorage && sessionStorage.getItem(cacheKey))
@@ -45,5 +54,5 @@ export function getEntryTime(ports, keyString) {
     return ''
   }, ports)
 
-  return value
+  return timeConvert(value)
 }
